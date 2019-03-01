@@ -3,7 +3,18 @@
 <style>
 #look-at-me {
   font-size: 100px;
+  text-align: center;
 }
 </style>
-<span id="look-at-me">ಠ_ಠ</span>
+  <script>
+    setInterval(function(){ 
+      let look = document.getElementById('look-at-me');
+      let size = window.getComputedStyle(look, null).getPropertyValue("font-size");
+      look.style.fontSize = (Number(size.split('p')[0]) + 1) + "px";
+      }, 1000);
+  </script>
+  </head>
+  <body>
+<div id="look-at-me">ಠ_ಠ</div>
+  </body>
 </html>
