@@ -11,11 +11,11 @@
         var timer = setInterval(zoom, 1000);
         function zoom() {
           let look = document.getElementById('look-at-me');
-          let size = window.getComputedStyle(look, null).getPropertyValue("font-size");
+          let size = Number(window.getComputedStyle(look, null).getPropertyValue("font-size").split('p')[0]);
           if(size => 650) {
             clearInterval(timer);
           }
-          look.style.fontSize = (Number(size.split('p')[0]) + 10) + "px";
+          look.style.fontSize = (size + 10) + "px";
         }
     })();
   </script>
