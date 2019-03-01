@@ -7,11 +7,16 @@
 }
 </style>
   <script>
-    setInterval(function(){ 
-      let look = document.getElementById('look-at-me');
-      let size = window.getComputedStyle(look, null).getPropertyValue("font-size");
-      look.style.fontSize = (Number(size.split('p')[0]) + 1) + "px";
-      }, 1000);
+    (function() {
+        var timer = setInterval(zoom, 1000);
+        function zoom() {
+          let look = document.getElementById('look-at-me');
+          let size = window.getComputedStyle(look, null).getPropertyValue("font-size");
+          if(size => 1000)
+            clearTimeout(zoom);
+          look.style.fontSize = (Number(size.split('p')[0]) + 10) + "px";
+        }
+    })();
   </script>
   </head>
   <body>
