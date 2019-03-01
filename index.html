@@ -12,7 +12,7 @@
         function zoom() {
           let look = document.getElementById('look-at-me');
           let size = Number(window.getComputedStyle(look, null).getPropertyValue("font-size").split('p')[0]);
-          if(size => 650) {
+          if(size >= 650) {
             clearInterval(timer);
           }
           look.style.fontSize = (size + 10) + "px";
